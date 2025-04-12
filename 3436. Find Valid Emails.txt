@@ -1,0 +1,31 @@
+3436. Find Valid Emails
+Easy
+Topics
+Companies
+SQL Schema
+Pandas Schema
+Table: Users
+
++-----------------+---------+
+| Column Name     | Type    |
++-----------------+---------+
+| user_id         | int     |
+| email           | varchar |
++-----------------+---------+
+(user_id) is the unique key for this table.
+Each row contains a user's unique ID and email address.
+Write a solution to find all the valid email addresses. A valid email address meets the following criteria:
+
+It contains exactly one @ symbol.
+It ends with .com.
+The part before the @ symbol contains only alphanumeric characters and underscores.
+The part after the @ symbol and before .com contains a domain name that contains only letters.
+
+Solutions:
+
+# Write your MySQL query statement below
+SELECT 
+    *
+FROM users
+WHERE email REGEXP '^[a-zA-Z0-9_]+@[a-zA-Z]+.(com)$'
+ORDER BY user_id;
